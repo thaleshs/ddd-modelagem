@@ -1,11 +1,4 @@
-import {
-  Column,
-  HasMany,
-  Model,
-  PrimaryKey,
-  Table,
-} from "sequelize-typescript";
-import OrderModel from "./order.model";
+import { Column, Model, PrimaryKey, Table } from "sequelize-typescript";
 
 @Table({
   tableName: "customers",
@@ -36,7 +29,4 @@ export default class CustomerModel extends Model {
 
   @Column({ allowNull: false })
   declare rewardPoints: number;
-
-  @HasMany(() => OrderModel)
-  declare orders: OrderModel[];
 }
